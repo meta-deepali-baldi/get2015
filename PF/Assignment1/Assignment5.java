@@ -2,8 +2,19 @@ package Assignments;
 
 import java.util.Scanner;
 
+/**
+ * @author Deepali
+ *Write a function to check given array is in sorted order or not. Function should return 1 if array is in ascending order, 2 if array is in descending order, 0 if array is not in sorted
+ *Use this function and write a program to display appropriate message based on return value of above function.
+ *Also write JUnit test cases which takes an integer array as input and assert return value.
+ *Write Junit Test cases for all above 3 cases.
+ */
 public class Assignment5 {
 
+	/**
+	 * @param array :Array whose order is to be checked
+	 * size : size of this array
+	 */
 	public static void main(String[] args) {
 		int array[];
 		int size;
@@ -26,9 +37,14 @@ public class Assignment5 {
 			
 
 	}
+	
+	/**
+	 * @param input : receiving array for checking order
+	 * @return : an integer value is returned
+	 */
 	static int checkingorderofarray(int input[]){
 		int count1=0,count2=0;
-		for(int i=0;i<input.length-1;i++)
+		for(int i=0;i<input.length-1;i++)//for checking Ascending array
 		{
 			if(input[i+1]>=input[i]){
 				count1++;	
@@ -36,7 +52,7 @@ public class Assignment5 {
 			else
 				break;
 		}
-		for(int i=0;i<input.length-1;i++)
+		for(int i=0;i<input.length-1;i++)//for checking Descending array
 		{
 			if(input[i+1]<=input[i]){
 				count2++;	
@@ -49,7 +65,7 @@ public class Assignment5 {
 		return 1;
 		else if(count2==input.length-1)
 			return 2;
-		else
+		else  // for checking not sorted array
 			return 0;
 		
 	}
