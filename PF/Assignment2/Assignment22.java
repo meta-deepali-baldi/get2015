@@ -2,9 +2,25 @@ package Assignments;
 
 import java.util.Scanner;
 
+/**
+ * @author Deepali
+ * 1 2 3 4 5 
+     1 2 3 4 
+       1 2 3 
+         1 2 
+           1
+Write a program to display above structure using modular approach. 
+Divide whole problem in 3 parts as per describe in the presentation.
+1. spaces(row, n): return the spaces string
+2. numbers(row, n): return the number string
+3. print whole pyramid : It will return the array of string by using above 2 functions.
+Also write JUnit test cases for each modules.
+ */
 public class Assignment22 {
 
-	
+	/**
+	 * @param number: It denote number for which pyramid is created
+	 */
 	public static void main(String[] args) {
 		int num;
 		Assignment22 a1=new Assignment22();
@@ -16,6 +32,12 @@ public class Assignment22 {
 			System.out.println(s4[i]);
 		
 	}
+	
+	/**
+	  @param row :row of the Structure
+	 * @param n   :The value for which Structure we have to create
+	 * @return :string of space
+ */
 	String spaces(int row,int n){
 		String s1="";
 		for(int i=1;i<row;i++){
@@ -34,6 +56,12 @@ public class Assignment22 {
 		return s1;
 		
 	}
+	
+	/**
+	  @param row :row of the Structure
+	 * @param n   :The value for which Structure we have to create
+	 * @return :string of numbers
+*/
 	
 	String[] printWholePyramid(int n)
 	{
