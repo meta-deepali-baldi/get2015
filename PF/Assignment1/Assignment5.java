@@ -27,7 +27,7 @@ public class Assignment5 {
 		{
 			array[i]=sc.nextInt();
 		}
-		int result=checkingorderofarray(array);
+		int result=checkingOrderOfArray(array);
 		if(result==1)
 			System.out.println("Array is in ascending order");
 		else if(result==2)
@@ -42,7 +42,7 @@ public class Assignment5 {
 	 * @param input : receiving array for checking order
 	 * @return : an integer value is returned
 	 */
-	static int checkingorderofarray(int input[]){
+	static int checkingOrderOfArray(int input[]){
 		int count1=0,count2=0;
 		for(int i=0;i<input.length-1;i++)//for checking Ascending array
 		{
