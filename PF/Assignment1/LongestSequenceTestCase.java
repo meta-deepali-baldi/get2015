@@ -47,6 +47,7 @@ public class LongestSequenceTestCase {
 	/**
 	 * JUnit test cases which will assert the array returned and the expected array for longestSequence
 	 */
+	 @Test
 	public void test1() {
 		int array1[]={1,2,3,2,3,4,5,3,4,2,2,3,4,5,6,7,8,1,2,4,5,6,7,8,9};
 		int[] array2=Assignment3.longestSequence(array1);
