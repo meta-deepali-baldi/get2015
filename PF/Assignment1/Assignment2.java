@@ -46,7 +46,6 @@ static int  count=0;
 				if(input[i]==input[j])//Checking Duplicate Elements
 				{
 					count++;
-					System.out.println("count="+count);
 					for( k=j;k<input.length-count;k++){//for Shifting Elements if found any Duplicate
 						input[k]=input[k+1];
 					}
