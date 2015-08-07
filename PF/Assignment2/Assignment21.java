@@ -49,12 +49,12 @@ public class Assignment21 {
 	 */
 	String spaces(int row,int n){
 		String s1="";
-		if(row<=n){
+		if(row<=n){//for upward pyramid
 		for(int i=0;i<n-row;i++){
 			s1=s1+" ";
 		}
 		}
-		else
+		else//for downward pyramid
 		{
 			for(int i=0;i<row-n;i++){
 				s1=s1+" ";
@@ -72,7 +72,7 @@ public class Assignment21 {
 	String number(int row,int n){
 		String s1="";
 		int j=0;
-		if(row<=n){
+		if(row<=n){//for upward pyramid
 		for(int i=1;i<=row;i++){
 			s1=s1+i;
 		}
@@ -81,7 +81,7 @@ public class Assignment21 {
 			s1=s1+i;
 		}
 		}
-		else
+		else//for downward pyramid
 		{
 			
 			j=j+2*(row-n);
@@ -107,7 +107,7 @@ public class Assignment21 {
 	String[] printWholePyramid(int n)
 	{
 		String s1="",s2="";
-String s3[]=new String[(2*n)-1];
+                String s3[]=new String[(2*n)-1];
 		for(int i=1;i<=2*n-1;i++){
 			s1=spaces(i,n);
 			s2=number(i,n);
