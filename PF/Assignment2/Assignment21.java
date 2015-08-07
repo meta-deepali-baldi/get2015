@@ -2,19 +2,51 @@ package Assignments;
 
 import java.util.Scanner;
 
+
+/**
+ * @author Deepali
+ * 	     1
+       1 2 1
+     1 2 3 2 1
+   1 2 3 4 3 2 1
+ 1 2 3 4 5 4 3 2 1
+   1 2 3 4 3 2 1
+	 1 2 3 2 1
+	   1 2 1
+		 1
+
+Write a program to display above pyramid using modular approach. 
+Divide whole problem in 3 parts as per describe in the presentation.
+1. spaces(row, n): return the spaces string
+2. numbers(row, n): return the number string
+3. print whole pyramid : It will return the array of string by using above 2 functions.
+Also write JUnit test cases for each modules.
+ */
+
+
 public class Assignment21 {
 
+	/**
+	 * @param number: It denote number for which pyramid is created
+	 */
 	public static void main(String[] args) {
-		int num;
+		int number;
 		Assignment21 a1=new Assignment21();
 		System.out.println("enter the Number");
 		Scanner sc=new Scanner(System.in);
-		num=sc.nextInt();
-		String s4[]=a1.printWholePyramid(num);
+		number=sc.nextInt();
+		String s4[]=a1.printWholePyramid(number);
 		for(int i=0;i<s4.length;i++)
 			System.out.println(s4[i]);
 		
 	}
+	
+	/**
+	 * @param row :row of the pyramid
+	 * @param n   :The value for which pyramid we have to create
+	 * @return :string of space
+
+	 */
 	String spaces(int row,int n){
 		String s1="";
 		if(row<=n){
@@ -32,6 +64,11 @@ public class Assignment21 {
 		
 	}
 	
+	/**
+	 *@param row :row of the pyramid
+	 * @param n   :The value for which pyramid we have to create
+	 * @return :string of numbers
+	 */
 	String number(int row,int n){
 		String s1="";
 		int j=0;
@@ -63,6 +100,10 @@ public class Assignment21 {
 		
 	}
 	
+	/**
+	 *  @param n   :The value for which pyramid we have to create
+	 * @return :s3 is array of String containing string of concatenation of spaces and numbers
+	 */
 	String[] printWholePyramid(int n)
 	{
 		String s1="",s2="";
