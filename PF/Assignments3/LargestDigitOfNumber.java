@@ -15,7 +15,7 @@ import java.util.Scanner;
  * largestDigit :contain largest digit of number
  */
 public class LargestDigitOfNumber {
-	private int flag=0;
+	private int flag=0;//used to store temporary value
 	public static void main(String[] args) {
 		int number,largestDigit,temp;
 		LargestDigitOfNumber largestDigitOfNumber=new LargestDigitOfNumber();
@@ -44,17 +44,17 @@ public class LargestDigitOfNumber {
 	 */
 	public int largestDigit(int x){
 		int temp = 0;
-		if(x==0){
+		if(x==0){//if their is no digit
 			return flag;
 		}
 		else if(x>0)
 		{
 			temp=x%10;																																																																																																																																					temp=x%10;
-		if(flag<temp){
+		if(flag<temp){//for storing larger digit
 			flag=temp;
 		}
 		x=x/10;
-		flag=largestDigit(x);	
+		flag=largestDigit(x);	//Recursive Function
 		}
 		return flag;
 	}
