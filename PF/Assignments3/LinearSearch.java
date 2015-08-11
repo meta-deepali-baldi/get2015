@@ -12,9 +12,12 @@ import java.util.Scanner;
 
 /**
  * @author Deepali
+ * array : where Element to be searched
+ * size:Length of array
+ * number :element to be searched
  */
 public class LinearSearch {
-	private int index = 0;
+	private int index = 0;//To store index of searching element
 
 	public static void main(String[] args) {
 		int array[];
@@ -61,14 +64,14 @@ public class LinearSearch {
 	 */
 	public int linearSearchInArray(int a[], int number) {
 		int temp;
-		if (index < a.length) {
-			if (a[index] == number)
+		if (index < a.length) {//should not exceed array boundary
+			if (a[index] == number)//for checking number
 				return 1;
 			else {
 				index++;
-				return (linearSearchInArray(a, number));
+				return (linearSearchInArray(a, number));//Recursive calling
 			}
 		} else
-			return 0;
+			return 0;//if element not found
 	}
 }
