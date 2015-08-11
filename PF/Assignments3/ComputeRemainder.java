@@ -43,10 +43,10 @@ private int divisor,dividend,remainder;
 	/**recursive function to calculate remainder
 	 * @param x:recieving dividend value
 	 * @param y:recieving divisor value
-	 * @return :
+	 * @return :remainder
 	 */
 	public int rem(int x, int y){
-		while(x>=y){
+		while(x>=y){//checking that dividend is greater than divisor
 			x=x-y;
 			x=rem(x,y);
  		}
