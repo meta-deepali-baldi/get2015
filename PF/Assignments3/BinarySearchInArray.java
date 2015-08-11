@@ -11,15 +11,12 @@ import java.util.Scanner;
 
 /**
  * @author Deepali
+ * array :In which element is to be searched
+ * size: length of the array
+ * number: Number which we want to search
  */
 public class BinarySearchInArray {
-	//private int index = 0;
 
-	/**
-	 * array :In which element is to be searched
-	 * size: length of the array
-	 * number: Number which we want to search
-	 */
 	public static void main(String[] args) {
 		int array[];
 		int size, result, number, temp;
@@ -68,22 +65,21 @@ public class BinarySearchInArray {
 		if(startIndex < endIndex){
 			int mid=(startIndex+endIndex)/2;
 		
-			if(number==array[mid]){
+			if(number==array[mid]){//value matches with mid value
 				return mid;
 			}
-			else if(number<array[mid])
-			{
+			else if(number<array[mid]){//to check if value belong to lower array
 				startIndex=0;
 				endIndex=mid-1;
 				return(binarySearch(array,startIndex,endIndex,number));
 			}
-			else {
+			else {//to check if value belong to upper array
 				startIndex=mid+1;
 				endIndex=array.length-1;
 				return(binarySearch(array,startIndex,endIndex,number));
 			}
 		}
-		else 
+		else //for value doesn't exist in array
 			return array.length ;
 	}
 }
