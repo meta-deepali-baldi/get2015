@@ -80,13 +80,13 @@ public static void quickSort(int arr[], int low, int high) {
 	int mid = arr[(low + high) / 2];
 	int midptr = (low + high) / 2;
 
-	while (i <= j) {
-		while ((i < midptr) && (arr[i] < mid))
+	while (i <= j) {//Limit Boundary Condition
+		while ((i < midptr) && (arr[i] < mid))//To get array of smaller values then mid value
 			i++;
-		while ((j > midptr) && (arr[j] > mid))
+		while ((j > midptr) && (arr[j] > mid))//To get array of greater values then mid value
 			j--;
 		if (i <= j) {
-
+			//Swapping values
 			temp = arr[i];
 			arr[i] = arr[j];
 			arr[j] = temp;
@@ -95,11 +95,11 @@ public static void quickSort(int arr[], int low, int high) {
 			j--;
 		}
 	}
-	if (low < j) {
+	if (low < j) {//Recursive calling the function for lower half
 		quickSort(arr, low, j);
 	}
 
-	if (i < high) {
+	if (i < high) {//Recursive calling the function for upper half
 		quickSort(arr, i, high);
 	}
 }
