@@ -29,7 +29,6 @@ public class Survey {
 															// selecting it
 
 	public Survey() {// for creating their list and hashmap
-		super();
 		participantList = new ArrayList<Participant>();
 		questionList = new ArrayList<Question>();
 		hmQuestion = new HashMap<String, HashMap<String, Integer>>();
