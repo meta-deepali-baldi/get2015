@@ -1,0 +1,26 @@
+Object Oriented Programming - Assignments
+Session 3
+Duration (5hrs)
+
+Assignment 1: Train Reservation System Console Application
+ 
+System will ask User to enter his Name and train type Passenger/Goods (P/G). Trains will get listed out those have availability order by duration (travel time). (Read train info from file)
+Now system will ask User for from-to station and refine the results depending on user input.
+System will ask User to enter required details like.. Train Name/Id and Seat (if Passenger)/Weight (if Goods).
+Booking won't process further if entered seat/weight is greater than train's availability. System will refine result and display suitable trains.
+Now for booking ask for Payment mode.. Credit Card / Wallet / Net Banking etc.. Based on the payment mode selection user will fill required details like..
+CC - CC number and cvv
+Wallet - nothing, just process the payable amount
+Net Banking - Bank, UserName, Password
+Once everything confirm as per the business model, System will print the Ticket details and reduce number of seats/weight from that train.
+System will Ask for another booking.. display chart accordingly, follow A.
+ 
+ 
+Output Report:
+A. Ticket Details on successful Booking (UserName, Train Number, Number of Booked Seats/weight, Paid Amount)
+B. Updated Train chart
+
+
+
+
+Assignment 2: Refactor Code of all three OOP assignments.

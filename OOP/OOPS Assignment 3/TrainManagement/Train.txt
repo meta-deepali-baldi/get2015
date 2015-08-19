@@ -1,0 +1,8 @@
+passengerTrain,101,Jaipur,Mumbai,200,500
+passengerTrain,102,Jaipur,Delhi,300,400
+passengerTrain,103,Mumbai,Jaipur,200,500
+passengerTrain,104,Delhi,Jaipur,300,400
+goodsTrain,105,Jaipur,Mumbai,200,500
+goodsTrain,106,Jaipur,Delhi,300,400
+goodsTrain,107,Mumbai,Jaipur,200,500
+goodsTrain,108,Delhi,Jaipur,300,400
