@@ -29,7 +29,6 @@ public class Train {
 	 */
 	public Train(String trainNumber, String startingPoint, String endPoint,
 			double price) {
-		super();
 		this.trainNumber = trainNumber;
 		this.startingPoint = startingPoint;
 		this.endPoint = endPoint;
