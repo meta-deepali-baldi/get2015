@@ -51,7 +51,7 @@ public class Booking {
 		int count;
 		Booking booking = new Booking();
 		try {
-			booking.readData("./src/TrainManagement/Train.txt");
+			booking.readData("./src/RefactoredTrainManagement/Train.txt");
 
 			do {
 				System.out.println("Enter Ticket Holder Name");
