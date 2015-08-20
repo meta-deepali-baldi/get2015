@@ -1,0 +1,6 @@
+1,What are your religious beliefs?,singleselect,A.Hindu/B.Muslim/C.Sikh/D.Christian/E.Jainism,Hindu
+2,What is your age?,singleselect,A.10-20/B.20-30/C.30-40/D.40-50/E.50-60,20-30
+3,What do you like to eat?,multipleselect,A.Idli/B.Maggi/C.Aloo Parantha/D.Icecream/E.Burger,Icecream/Maggi/Burger
+4,What do you want to see in TV?,multipleselect,A.Movie/B.Music/C.Serial/D.RealityShow/E.Documentary,Movie/Documentary
+5,What do you feel to be added to review?,text,jgsdhj
+6,What is your Feedback?,text,hgdshfvs
