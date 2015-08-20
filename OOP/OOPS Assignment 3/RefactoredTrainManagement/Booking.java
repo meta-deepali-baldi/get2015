@@ -121,7 +121,8 @@ public class Booking {
 		String duration = "";
 		try {
 
-			br = new BufferedReader(new FileReader(fileName));
+			File f=new File(fileName).getAbsoluteFile();
+			br = new BufferedReader(new FileReader(f));
 			while ((line = br.readLine()) != null) {
 				// use comma as separator
 				String[] row = line.split(cvsSplitBy);
@@ -152,6 +153,7 @@ public class Booking {
 					trainList.add(goodsTrain);// adding to train list
 				}
 			}
+			sortChart();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
