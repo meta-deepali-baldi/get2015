@@ -78,11 +78,6 @@ public class Graph {
 	void removeNode(Entity p) {
 		Processing.nodeSet.remove(p);
 		Processing.friendMap.remove(p.getEmail());
-		
-//		for (String s : Processing.friendMap.keySet()) {
-//			Processing.friendMap.get(s).remove(personObject.getEmail());
-//		}
-		
 		System.out.println("the person was successfully removed from the network.");
 	}
 	
