@@ -128,7 +128,7 @@ public class Graph {
 				}
 				i++;
 			}
-			if(i==Processing.nodeSet.size()) {//if no such name exist
+			if(i>=Processing.nodeSet.size()) {//if no such name exist
 				System.out.println(name+" does not exist");
 			}
 	}
