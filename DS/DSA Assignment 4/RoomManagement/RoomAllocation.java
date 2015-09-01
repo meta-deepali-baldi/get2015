@@ -97,7 +97,7 @@ public class RoomAllocation {
 	 * To display all guest 
 	 */
 	public void displayAllGuest() {
-		int roomNumber = 1;
+		int roomNumber = 0;
 		Iterator<Room> roomIterator = rooms.iterator();
 		while (roomIterator.hasNext()) {
 			Room room = roomIterator.next();
