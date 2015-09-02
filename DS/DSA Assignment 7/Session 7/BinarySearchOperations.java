@@ -25,7 +25,7 @@ public class BinarySearchOperations {
 			
 			midValue = (startIndex + endIndex) / 2;
 			if (element == array[midValue]) {//if found at mid index
-				System.out.println("Number Found at ");
+				System.out.println("Number Found at "+midValue);
 				return midValue; // Returning position of number found
 			} else if (element > array[midValue]) {	//If element is in Left sub array
 				return (binarySearch(element, midValue + 1, endIndex, array));
