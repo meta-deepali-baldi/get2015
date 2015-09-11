@@ -104,7 +104,6 @@ group by s.subject_id ;
 
 /*  Question 2 : display those rows from the book_issue table where a book can be returned after two months.
     That is the difference in due_date and issue_Date is greater than two months
-    we will not get any row as we  have set it as only for 15 days
 */
 
 Update book_issue Set due_date='2015-11-30' where member_id=1;
