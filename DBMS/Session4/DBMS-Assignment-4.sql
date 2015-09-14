@@ -1,4 +1,4 @@
-Use library_database;
+use library_database;
 
 /* Assignment 1: */
 /* 1. Write a SELECT command to display name of those members
@@ -57,22 +57,22 @@ should include book issue date, title, member name and due
 date.
 Note: Use Correlated Subquery.*/
 SELECT 
-    bi.Issue_date, t.Title_name, m.Member_name, bi.Due_date
+    bi.issue_date, t.title_name, m.member_name, bi.due_date
 FROM
-    book_Issue bi
+    book_issue bi
         INNER JOIN
-    books b ON b.Accession_no = bi.Accession_no
+    books b ON b.accession_no = bi.accession_no
         INNER JOIN
-    titles t ON t.Title_id = b.title_id
+    titles t ON t.title_id = b.title_id
         INNER JOIN
-    Members m ON m.Member_id = bi.Member_id
+    members m ON m.member_id = bi.member_id
 WHERE
     EXISTS( SELECT 
         br.member_id, br.issue_date, br.accession_no
     FROM
         book_return br
     WHERE
-        br.issue_date = DATE(bi.issue_date) AND br.member_id = bi.member_id AND br.accession_no = bi.accession_no AND br.Return_date > bi.Due_Date);
+        br.issue_date = DATE(bi.issue_date) AND br.member_id = bi.member_id AND br.accession_no = bi.accession_no AND br.return_date > bi.due_date);
 
 /* 4. Write a SELECT command to display information of those books
 whose price is equal to the most expensive book purchase so far.*/
