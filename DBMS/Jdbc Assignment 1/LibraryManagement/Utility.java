@@ -42,6 +42,7 @@ public class Utility {
 			value = scanner.next().toUpperCase().charAt(0);
 			if (value == 'P'||value=='S'||value=='O')
 				break;
+			System.out.println("Enter Correct value");
 		} while (value != 'P'||value!='S'||value!='O');
 		return value;
 	}
