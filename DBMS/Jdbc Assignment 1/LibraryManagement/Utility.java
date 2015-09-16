@@ -54,7 +54,7 @@ public class Utility {
 	public char checkingCategory() {
 		char value;
 		do {// validation
-			System.out.println("Enter Correct value");
+		
 			while (!scanner.hasNext()) {
 				System.out.println("That's not a character!");
 				scanner.next(); // this is important!
@@ -64,6 +64,7 @@ public class Utility {
 			if(value == 'F' ||value =='M') {
 				break;
 			}
+			System.out.println("Enter Correct value");
 		} while (value != 'F' ||value !='M');
 		return value;
 	}
