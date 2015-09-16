@@ -70,15 +70,12 @@ public class LibraryHelperClass {
 		}
 		return titleList;
 	}
-
-	/**Add a new member and issue the given book
-	 * @return :true if book issued and false if not issued or book not exist
+	
+	/**Function to get a new member 
+	 * @return Member object
 	 */
-	public boolean addNewMemberAndIssueBook() {
+	private Member insertNewMember() {
 		Member member = new Member(); 
-		Book book = null;
-		boolean flag = false;
-		String query;
 		Utility utility = new Utility();
 		//Getting details of new member
 		System.out.println("Enter New Member Name");
@@ -91,6 +88,17 @@ public class LibraryHelperClass {
 		member.setCategory(utility.checkingCategory());
 		System.out.println("Enter Person type of Member");
 		member.setPersonType("" + utility.checkingPersonType());
+		return member;
+	}
+
+	/**Add a new member and issue the given book
+	 * @return :true if book issued and false if not issued or book not exist
+	 */
+	public boolean addNewMemberAndIssueBook() {
+		Member member = insertNewMember(); 
+		Book book = null;
+		boolean flag = false;
+		String query;
 		//Query to add member
 		query = "INSERT INTO Members (member_name,addressLine1,addressLine2,category,person_type)"
 				+ "VALUES( '"
