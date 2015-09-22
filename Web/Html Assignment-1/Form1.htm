@@ -1,0 +1,355 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css" />
+<script>
+	function namevalidate(e) {
+		if (e.which) {
+			keynum = e.which;
+		}
+		keychar = String.fromCharCode(keynum);
+		numcheck = /\d/;
+		return !numcheck.test(keychar);
+	}
+	function numbervalidate(e) {
+		if (e.which) {
+			keynum = e.which;
+		}
+		keychar = String.fromCharCode(keynum);
+		numcheck = /\d/;
+		return numcheck.test(keychar);
+	}
+
+	function validateComplete() {
+		var n = document.getElementById('number').value;
+		
+		var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+		var address = document.cform1.user_email.value;
+		if (document.getElementById('user_email').value == "") {
+			alert("provide the email id");
+			document.cform1.user_email.focus();
+			return false;
+		} else if (reg.test(address) == false) {
+			alert("Enter valid Email ID");
+			document.cform1.user_email.value = '';
+			document.cform1.user_email.focus();
+			document.getElementById('user_email').style.background="red";
+			
+			return false;
+		} else if (document.getElementById('pwd').value == "") {
+			alert("Enter password");
+			document.cform1.pwd.focus();
+			document.getElementById('user_email').style.background="white";
+			document.getElementById('pwd').style.background="red";
+			return false;
+		} else if (document.getElementById('confirmPassword').value == "") {
+			alert("Enter password to confirm");
+			document.cform1.confirmPassword.focus();
+			document.getElementById('user_email').style.background="white";
+			document.getElementById('pwd').style.background="white";
+			document.getElementById('confirmPassword').style.background="red";
+			return false;
+		} else if (document.getElementById('pwd').value != document
+				.getElementById('confirmPassword').value) {
+			alert("password not matching");
+			document.cform1.confirmPassword.focus();
+			document.getElementById('user_email').style.background="white";
+			document.getElementById('pwd').style.background="white";
+			document.getElementById('confirmPassword').style.background="red";
+			return false;
+		} else if (document.getElementById('name').value == "") {
+			alert("Provide name");
+			document.getElementById('name').focus();
+			document.getElementById('user_email').style.background="white";
+			document.getElementById('pwd').style.background="white";
+			document.getElementById('confirmPassword').style.background="red";
+			document.getElementById('name').style.background="red";
+			return false;
+		} else if (document.getElementById('location').value == "") {
+			alert("Provide your location");
+			document.getElementById('location').focus();
+			document.getElementById('user_email').style.background="white";
+			document.getElementById('pwd').style.background="white";
+			document.getElementById('confirmPassword').style.background="white";
+			document.getElementById('name').style.background="white";
+			document.getElementById('location').style.background="red";
+			return false;
+		}else if (document.getElementById("nationality").checked ==true) {
+			document.cform1.location.disabled=true;
+			document.cform1.MobileNumber.focus();
+			document.getElementById('location').style.background="white";
+			return false;
+		}else if (document.getElementById('number').value == "") {
+			alert("Enter mobile no.");
+			document.cform1.MobileNumber.focus();
+			document.getElementById('user_email').style.background="white";
+			document.getElementById('pwd').style.background="white";
+			document.getElementById('confirmPassword').style.background="white";
+			document.getElementById('name').style.background="white";
+			document.getElementById('location').style.background="white";
+			document.getElementById('number').style.background="red";
+			return false;
+		} else if (document.getElementById('number').value.charAt(0) != 9 && document.getElementById('number').value.charAt(0) != 8 && document.getElementById('number').value.charAt(0) != 7) {
+			alert("Mobile number must starts with 9 or 8 or 7");
+			document.getElementById('number').value = "";
+			document.cform1.MobileNumber.focus();
+			document.getElementById('user_email').style.background="white";
+			document.getElementById('pwd').style.background="white";
+			document.getElementById('confirmPassword').style.background="white";
+			document.getElementById('name').style.background="white";
+			document.getElementById('location').style.background="white";
+			document.getElementById('number').style.background="red";
+			return false;
+		}else if (document.getElementById('years').value == "") {
+			alert("Provide your experience years");
+			document.getElementById('years').focus();
+			document.getElementById('user_email').style.background="white";
+			document.getElementById('pwd').style.background="white";
+			document.getElementById('confirmPassword').style.background="white";
+			document.getElementById('name').style.background="white";
+			document.getElementById('location').style.background="white";
+			document.getElementById('number').style.background="white";
+			document.getElementById('years').style.background="red";
+			return false;
+		}else if (document.getElementById('month').value == "") {
+			alert("Provide your experience months");
+			document.getElementById('month').focus();
+			document.getElementById('user_email').style.background="white";
+			document.getElementById('pwd').style.background="white";
+			document.getElementById('confirmPassword').style.background="white";
+			document.getElementById('name').style.background="white";
+			document.getElementById('location').style.background="white";
+			document.getElementById('number').style.background="white";
+			document.getElementById('years').style.background="white";
+			document.getElementById('month').style.background="red";
+			return false;
+		}else if (document.getElementById('industry').value == "") {
+			alert("Provide your current working industry");
+			document.getElementById('industry').focus();
+			document.getElementById('user_email').style.background="white";
+			document.getElementById('pwd').style.background="white";
+			document.getElementById('confirmPassword').style.background="white";
+			document.getElementById('name').style.background="white";
+			document.getElementById('location').style.background="white";
+			document.getElementById('years').style.background="white";
+			document.getElementById('number').style.background="white";
+
+			document.getElementById('month').style.background="white";
+			document.getElementById('industry').style.background="red";
+			return false;
+		}else if (document.getElementById('area').value == "") {
+			alert("Provide your Functionalarea");
+			document.getElementById('area').focus();
+			document.getElementById('industry').style.background="white";
+			document.getElementById('area').style.background="red";
+			return false;
+		}else if (document.getElementById('key').value == "") {
+			alert("Provide your key skills");
+			document.getElementById('key').focus();
+			document.getElementById('area').style.background="white";
+			document.getElementById('key').style.background="red";
+			return false;
+		}else if (document.getElementById('resume').value == "") {
+			alert("Provide your resume headlines");
+			document.getElementById('resume').focus();
+			document.getElementById('key').style.background="white";
+			document.getElementById('resume').style.background="red";
+			return false;
+		}else if (document.getElementById('basic').value == "") {
+			alert("Provide your graduation details");
+			document.getElementById('basic').focus();
+			document.getElementById('resume').style.background="white";
+			document.getElementById('basic').style.background="red";
+			return false;
+		}else if (document.getElementById('post').value == "") {
+			alert("Provide your post graduation details");
+			document.getElementById('post').focus();
+			document.getElementById('basic').style.background="white";
+			document.getElementById('post').style.background="red";
+			return false;
+		}else if (document.getElementById('phd').value == "") {
+			alert("Provide your phd details");
+			document.getElementById('phd').focus();
+			document.getElementById('post').style.background="white";
+			document.getElementById('phd').style.background="red";
+			return false;
+		}else if (document.getElementById("upload")=="") {
+			alert("Necessary to upload ");
+			document.getElementById('upload').focus();
+			return false;
+		}else if (document.getElementById("input5").checked ==false) {
+			alert("Necessary to select");
+			document.getElementById('input5').focus();
+			return false;
+		}
+		return true;
+	}
+</script>
+</head>
+<body>
+	<form id="form1" name="cform1" action=""
+		onsubmit="return validateComplete();">
+		<div class="padding-heading">
+			<h3>Create your account</h3>
+		</div>
+		<div class="padding">
+			<font color="red">*</font> Email ID: <input type="text" value=""
+				id="user_email" name="user_email" /><br />
+			<br /> <font color="red">*</font> Password: <input type="password"
+				id="pwd" name="pwd" /><br />
+			<br /> <font color="red">*</font> Confirm Password: <input
+				type="password" id="confirmPassword" name="ConfirmPassword"
+				maxlength=10 /><br />
+			<br />
+		</div>
+		<hr>
+			<div class="padding-heading">
+				<h3>
+					Contact Details      <sub>   This is where recruiters and employees
+						will contact you for jobs.</sub>
+				</h3>
+			</div>
+			<div class="padding">
+				Your Name: <input type="text" id="name" name="name" maxlength=50
+					onkeypress="return namevalidate(event);" /><br />
+				<br /> <font color="red">*</font> Current location: <select
+					name="location" id="location">
+					<option></option>
+					<option>Delhi</option>
+					<option>Mumbai</option>
+					<option>Kolkatta</option>
+					<option>Chennai</option>
+					<option>Jaipur</option>
+				</select> <input type="checkbox" name="nationality" id="nationality" /> Not from India<br />
+				<br /> <font color="red">*</font> Mobile No.<input type="text"
+					name="MobileNumber" id="number" maxlength=10
+					onkeypress="return numbervalidate(event);" /><br />
+				<br /> <sub>If you do not have a mobile, enter<a href="">
+						Landline No </a></sub><br />
+				<br />
+			</div>
+			<hr>
+				<div class="padding-heading">
+					<h3>Current Professional Details</h3>
+				</div>
+				<div class="padding">
+					<font color="red">*</font> Total Experience: <select name="years"
+						id="years" >
+						<option></option>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+					</select> Years <select months="month" id="month" >
+					    <option></option>
+						<option>0</option>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+						<option>10</option>
+						<option>11</option>
+						<option>12</option>
+					</select> Months<br />
+					<br /> <font color="red">*</font> Current Industry: <select
+						name="current_Industry" id="industry"  style="width:30%">
+						<option></option>
+						<option>IT</option>
+						<option>Mobile Technology</option>
+						<option>Big data</option>
+						<option>Testing</option>
+						<option>Networking</option>
+					</select><br />
+					<br /> <font color="red">*</font> Functional Area: <select
+						name="functional_area" id="area"  style="width:30%">
+						<option></option>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+					</select><br />
+					<br /> <a href=""> What is my functional area and Industry</a><br />
+					<br /> <font color="red">*</font> Key Skills:
+					<textarea rows="5" cols="30" id="key" placeholder="Please enter your area of expertise/specialization"></textarea>
+					<br />
+					<br /> <font color="red">*</font> Resume Headline: <input
+						type="text" name="resume" id="resume" size="20"
+						placeholder="Describe your professional background in one line" style="width:30%" /><br />
+					<br />
+				</div>
+				<hr>
+					<div class="padding-heading">
+						<h3>
+							Education Details<sub>Please list your areas of study</sub>
+						</h3>
+					</div>
+					<div class="padding">
+						<font color="red">*</font> Basic Graduation: <select
+							name="basic_graduation" id="basic"  style="width:30%">
+							<option></option>
+							<option>B.Tech</option>
+							<option>B.A</option>
+							<option>BBA</option>
+							<option>B.Sc</option>
+							<option>B.Com</option>
+						</select><br />
+						<br /> <font color="red">*</font> Post Graduation: <select
+							name="post_graduation" id="post"  style="width:30%">
+							<option></option>
+							<option>yes</option>
+							<option>no</option>
+						</select><br />
+						<br /> <font color="red">*</font> Doctrate Phd: <select
+							name="post_graduation" id="phd"  style="width:30%">
+							<option></option>
+							<option>yes</option>
+							<option>no</option>
+						</select><br />
+						<br />
+					</div>
+					<hr>
+						<div class="padding-heading">
+							<h3>
+								Upload resume <sub>Please upload a detailed resume</sub>
+							</h3>
+						</div>
+						<div class="align">
+							<font color="red">*</font> Attach resume: <input type="file"
+								name="Upload" id="upload" required >Upload resume</input><font
+								size="2"> Supported format doc,docx, pdf, rtf</font><br />
+							<br />
+						</div>
+						<hr>
+							<div class="padding-heading">
+								<h3>Mailer and privacy settings</h3>
+							</div>
+							<div class="input">
+								<input type="checkbox" name="settings" id="input1"
+									class="timesheet-daily-checkbox">Job_Alerts </input> <input
+									type="checkbox" name="settings" id="input2"
+									class="timesheet-daily-checkbox"> Important
+									Notifications </input><br />
+								<br /> <input type="checkbox" name="settings" id="input3"
+									class="timesheet-daily-checkbox"> Naukari Fast_Forward
+									Details </input> <input type="checkbox" name="settings" id="input4"
+									class="timesheet-daily-checkbox"> Communication from
+									clients </input><br />
+								<br /> <input type="checkbox" name="settings" id="input5"
+									class="timesheet-daily-checkbox" /> I have read and understood 
+								and agree to <a href=""> Terms and Conditions</a><br />
+								<br />
+							</div>
+							<hr />
+							<center>
+								<input name="Submit" type="submit" value="Create my account" />
+							</center>
+	</form>
+</body>
+</html>

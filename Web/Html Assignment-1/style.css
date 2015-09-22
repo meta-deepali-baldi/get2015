@@ -1,0 +1,41 @@
+div.padding {
+	text-align: right;
+	margin-right: 800px;
+}
+
+div.padding-heading {
+	padding-left: 2cm;
+}
+
+div.align {
+	margin-left: 200px;
+}
+
+div.input {
+	padding-left: 2cm;
+}
+
+.timesheet-daily-checkbox {
+	margin-right: 10px;
+	padding-right: 10px;
+	display: inline-block;
+	overflow: hidden
+}
+
+label.style1{
+	float: left;
+	width: 150px;
+	text-align: right;
+	margin-right: 2.2em;
+	
+}
+
+.padding a {
+		color: BLUE;
+		height: 100%;
+	}
+
+	.padding a:hover {
+		color: RED;
+	}
+
