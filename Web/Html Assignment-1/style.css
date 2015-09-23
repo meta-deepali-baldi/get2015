@@ -31,11 +31,11 @@ label.style1{
 }
 
 .padding a {
-		color: BLUE;
-		height: 100%;
-	}
+	color: BLUE;
+	height: 100%;
+}
 
-	.padding a:hover {
-		color: RED;
-	}
+.padding a:hover {
+	color: RED;
+}
 
