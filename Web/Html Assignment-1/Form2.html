@@ -23,142 +23,140 @@
 		var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 		var address = document.cform1.email.value;
 		var address1 = document.cform1.email_id.value;
-		if (reg.test(address+"@"+address1) == false && document.cform1.check.value==true) {
+		if (reg.test(address + "@" + address1) == false
+				&& document.cform1.check.value == true) {
 			alert("Invalid Email Address");
-			document.getElementById('email').value=""; 
-			document.getElementById('email_id').value=""; 
+			document.getElementById('email').value = "";
+			document.getElementById('email_id').value = "";
 			document.cform1.email.focus();
 		}
 	}
-	
+
 	function validateComplete() {
 		var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 		var address3 = document.cform1.email_id1.value;
 		if (document.getElementById('name').value == "") {
 			alert("Provide name");
 			document.cform1.first_name.focus();
-				document.getElementById('name').style.background="red";
+			document.getElementById('name').style.background = "red";
 			return false;
 		} else if (document.getElementById('name1').value == "") {
 			alert("Provide name");
 			document.cform1.last_name.focus();
-				document.getElementById('name').style.background="white";
-				document.getElementById('name1').style.background="red";
+			document.getElementById('name').style.background = "white";
+			document.getElementById('name1').style.background = "red";
 			return false;
 		} else if (document.getElementById('gender').value == "-Select One-") {
 			alert("Select Gender");
 			document.cform1.gender.focus();
-			document.getElementById('name').style.background="white";
-				document.getElementById('name1').style.background="white";
-				document.getElementById('gender').style.background="red";
+			document.getElementById('name').style.background = "white";
+			document.getElementById('name1').style.background = "white";
+			document.getElementById('gender').style.background = "red";
 			return false;
 		} else if (document.getElementById('month').value == "-Select Month-") {
 			alert("Select Month");
 			document.cform1.month.focus();
-			document.getElementById('name').style.background="white";
-				document.getElementById('name1').style.background="white";
-				document.getElementById('gender').style.background="white";
-				document.getElementById('month').style.background="red";
+			document.getElementById('name').style.background = "white";
+			document.getElementById('name1').style.background = "white";
+			document.getElementById('gender').style.background = "white";
+			document.getElementById('month').style.background = "red";
 			return false;
-		}else if (document.getElementById('day').value == "") {
+		} else if (document.getElementById('day').value == "") {
 			alert("Enter Day");
 			document.cform1.Day.focus();
-			document.getElementById('name').style.background="white";
-				document.getElementById('name1').style.background="white";
-				document.getElementById('gender').style.background="white";
-				document.getElementById('month').style.background="white";
-				document.getElementById('day').style.background="red";
+			document.getElementById('name').style.background = "white";
+			document.getElementById('name1').style.background = "white";
+			document.getElementById('gender').style.background = "white";
+			document.getElementById('month').style.background = "white";
+			document.getElementById('day').style.background = "red";
 			return false;
-		}else if (document.getElementById('year').value == "") {
+		} else if (document.getElementById('year').value == "") {
 			alert("Enter year");
 			document.cform1.Year.focus();
-			document.getElementById('name').style.background="white";
-				document.getElementById('name1').style.background="white";
-				document.getElementById('gender').style.background="white";
-				document.getElementById('month').style.background="white";
-				document.getElementById('day').style.background="white";
-				document.getElementById('year').style.background="red";
+			document.getElementById('name').style.background = "white";
+			document.getElementById('name1').style.background = "white";
+			document.getElementById('gender').style.background = "white";
+			document.getElementById('month').style.background = "white";
+			document.getElementById('day').style.background = "white";
+			document.getElementById('year').style.background = "red";
 			return false;
-		}else if (document.getElementById('country').value == "") {
+		} else if (document.getElementById('country').value == "") {
 			alert("Select Country");
 			document.cform1.country.focus();
-			document.getElementById('name').style.background="white";
-				document.getElementById('name1').style.background="white";
-				document.getElementById('gender').style.background="white";
-				document.getElementById('month').style.background="white";
-				document.getElementById('day').style.background="white";
-				document.getElementById('year').style.background="white";
-			document.getElementById('country').style.background="red";
+			document.getElementById('name').style.background = "white";
+			document.getElementById('name1').style.background = "white";
+			document.getElementById('gender').style.background = "white";
+			document.getElementById('month').style.background = "white";
+			document.getElementById('day').style.background = "white";
+			document.getElementById('year').style.background = "white";
+			document.getElementById('country').style.background = "red";
 			return false;
-		}else if (document.getElementById('email').value == "") {
+		} else if (document.getElementById('email').value == "") {
 			alert("Enter emailid");
 			document.cform1.email.focus();
-			document.getElementById('country').style.background="white";
-			document.getElementById('email').style.background="red";
+			document.getElementById('country').style.background = "white";
+			document.getElementById('email').style.background = "red";
 			return false;
-		}else if (document.getElementById('email_id').value == "") {
+		} else if (document.getElementById('email_id').value == "") {
 			alert("Select emailid");
 			document.cform1.email_id.focus();
-			document.getElementById('email').style.background="white";
-			document.getElementById('email_id').style.background="red";
+			document.getElementById('email').style.background = "white";
+			document.getElementById('email_id').style.background = "red";
 			return false;
 		} else if (document.getElementById('pwd').value == "") {
 			alert("Enter password");
 			document.cform1.pwd.focus();
-			document.getElementById('email_id').style.background="white";
-			document.getElementById('pwd').style.background="red";
+			document.getElementById('email_id').style.background = "white";
+			document.getElementById('pwd').style.background = "red";
 			return false;
 		} else if (document.getElementById('cpwd').value == "") {
 			alert("Enter password to confirm");
 			document.cform1.cpwd.focus();
-			document.getElementById('pwd').style.background="white";
-			document.getElementById('cpwd').style.background="red";
+			document.getElementById('pwd').style.background = "white";
+			document.getElementById('cpwd').style.background = "red";
 			return false;
-		}else if (document.getElementById('pwd').value != document
+		} else if (document.getElementById('pwd').value != document
 				.getElementById('cpwd').value) {
 			alert("password not matching");
 			document.cform1.cpwd.focus();
-			document.getElementById('pwd').style.background="white";
-			document.getElementById('cpwd').style.background="red";
+			document.getElementById('pwd').style.background = "white";
+			document.getElementById('cpwd').style.background = "red";
 			return false;
-		}else if (reg.test(address3) == false && address3!="") {
+		} else if (reg.test(address3) == false && address3 != "") {
 			alert("Invalid Alternate Email Address");
-			document.getElementById('alternate').value=""; 
+			document.getElementById('alternate').value = "";
 			document.cform1.email_id1.focus();
-			document.getElementById('cpwd').style.background="white";
-			document.getElementById('alternate').style.background="red";
+			document.getElementById('cpwd').style.background = "white";
+			document.getElementById('alternate').style.background = "red";
 			return false;
 		} else if (document.getElementById('question1').value == "-Select One-") {
 			alert("Select First question");
 			document.cform1.question1.focus();
-			document.getElementById('cpwd').style.background="white";
-				document.getElementById('alternate').style.background="white";
-			document.getElementById('question1').style.background="red";
+			document.getElementById('cpwd').style.background = "white";
+			document.getElementById('alternate').style.background = "white";
+			document.getElementById('question1').style.background = "red";
 			return false;
 		} else if (document.getElementById('answer1').value == "") {
 			alert("Enter answer");
 			document.cform1.answer1.focus();
-				document.getElementById('question1').style.background="white";
-				document.getElementById('answer1').style.background="red";
+			document.getElementById('question1').style.background = "white";
+			document.getElementById('answer1').style.background = "red";
 			return false;
-		}else if (document.getElementById('question2').value == "-Select One-") {
+		} else if (document.getElementById('question2').value == "-Select One-") {
 			alert("Select Second question");
 			document.cform1.question2.focus();
-			document.getElementById('answer1').style.background="white";
-				document.getElementById('question2').style.background="red";
+			document.getElementById('answer1').style.background = "white";
+			document.getElementById('question2').style.background = "red";
 			return false;
 		} else if (document.getElementById('answer2').value == "") {
 			alert("Enter answer");
 			document.cform1.answer2.focus();
-			document.getElementById('question2').style.background="white";
-				document.getElementById('answer2').style.background="red";
+			document.getElementById('question2').style.background = "white";
+			document.getElementById('answer2').style.background = "red";
 			return false;
 		}
 		return true;
 	}
-	
-	
-	
 </script>
 </head>
 <body>
@@ -169,15 +167,18 @@
 		</p>
 		<hr>
 		<div>
-			<label class="style1">Name</label> <input type="text" name="first_name" id="name"
-				 placeholder="First Name" onkeypress="return namevalidate(event);" />
-				<input type="text" id="name1" name="last_name" placeholder="Last Name" onkeypress="return namevalidate(event);" /><br/>
-			<br/> <label class="style1">Gender</label><select name="gender" class="boxes" id="gender">
+			<label class="style1">Name</label> <input type="text"
+				name="first_name" id="name" placeholder="First Name"
+				onkeypress="return namevalidate(event);" /> <input type="text"
+				id="name1" name="last_name" placeholder="Last Name"
+				onkeypress="return namevalidate(event);" /><br /> <br /> <label
+				class="style1">Gender</label><select name="gender" class="boxes"
+				id="gender">
 				<option>-Select One-</option>
 				<option>Male</option>
 				<option>Female</option>
-			</select><br/>
-			<br/> <label class="style1">Birthday</label><select name="month" id="month">
+			</select><br /> <br /> <label class="style1">Birthday</label><select
+				name="month" id="month">
 				<option>-Select Month-</option>
 				<option>1</option>
 				<option>2</option>
@@ -191,9 +192,11 @@
 				<option>10</option>
 				<option>11</option>
 				<option>12</option>
-			</select> <input type="text" name="Day" id="day" placeholder="Day" onkeypress="return namevalidate(event);" maxlength=20 >
-			<input type="text" name="Year" id="year" maxlength=8 placeholder="Year" onkeypress="return numbervalidate(event);"><br/>
-			<br/> <label class="style1">Country</label> <select name="country" id="country">
+			</select> <input type="text" name="Day" id="day" placeholder="Day"
+				onkeypress="return namevalidate(event);" maxlength=20> <input
+				type="text" name="Year" id="year" maxlength=8 placeholder="Year"
+				onkeypress="return numbervalidate(event);"><br /> <br /> <label
+				class="style1">Country</label> <select name="country" id="country">
 				<option></option>
 				<option>India</option>
 				<option>USA</option>
@@ -201,56 +204,55 @@
 				<option>UK</option>
 				<option>West Indies</option>
 				<option>Netherlands</option>
-			</select><br/>
-			<br/>
+			</select><br /> <br />
 		</div>
-		<br/>
+		<br />
 		<p>
 			<b><font size="4">Select an ID and password</font></b>
 		<hr>
 		</p>
 		<div>
-			<label class="style1">Metagurukul ID</label><input type="text" id="email" name="email" /> @ <select name="email_id" id="email_id">
+			<label class="style1">Metagurukul ID</label><input type="text"
+				id="email" name="email" /> @ <select name="email_id" id="email_id">
 				<option></option>
 				<option>metagurukal.com</option>
 				<option>gmail.com</option>
 				<option>yahoo.com</option>
 			</select>
-			<button type="check" name="check"  id="check" onclick="checkEmail(Event);">Check</button>
-			<br/>
-			<br/> <label class="style1">Password</label><input type="password" name="pwd" id="pwd"
-				maxlength=10 ><br/>
-			<br/><label class="style1">Re-type Password</label><input type="password" id="cpwd"
-				name="cpwd" maxlength=10 ><br/>
-			<br/>
+			<button type="check" name="check" id="check"
+				onclick="checkEmail(Event);">Check</button>
+			<br /> <br /> <label class="style1">Password</label><input
+				type="password" name="pwd" id="pwd" maxlength=10><br /> <br />
+			<label class="style1">Re-type Password</label><input type="password"
+				id="cpwd" name="cpwd" maxlength=10><br /> <br />
 		</div>
-		<br/>
+		<br />
 		<p>
 			<b><font size="4">In case you forget your ID or password</font></b>
 		<hr>
 		</p>
 		<div>
-			<label class="style1">Alternate Email (optional)</label><input type="email_id"
-				name="email_id1" id="alternate" maxlength=20 ><br/><br/>
-				<label class="style1">Select Question 1</label><select name="question1" id="question1">
+			<label class="style1">Alternate Email (optional)</label><input
+				type="email_id" name="email_id1" id="alternate" maxlength=20><br />
+			<br /> <label class="style1">Select Question 1</label><select
+				name="question1" id="question1">
 				<option>-Select One-</option>
 				<option>-What is your birth place</option>
 				<option>What is your phone number</option>
-			</select><br/>
-			<br/> <label class="style1">Your answer</label><input type="text" name="answer1" id="answer1"
-				maxlength=30 ><br/>
-			<br/> <label class="style1">Select Question 2</label><select name="question2" id="question2">
+			</select><br /> <br /> <label class="style1">Your answer</label><input
+				type="text" name="answer1" id="answer1" maxlength=30><br />
+			<br /> <label class="style1">Select Question 2</label><select
+				name="question2" id="question2">
 				<option>-Select One-</option>
 				<option>-What is your mother's maiden name</option>
 				<option>What is your favourite music genre</option>
-			</select><br/>
-			<br/><label class="style1">Your answer</label><input type="text" name="answer2"  id="answer2"
-				maxlength=30 ><br/>
-			<br/>
+			</select><br /> <br /> <label class="style1">Your answer</label><input
+				type="text" name="answer2" id="answer2" maxlength=30><br />
+			<br />
 		</div>
 		<hr>
 		<center>
-			<input type="submit" name="submit" value="Create My Account"/>
+			<input type="submit" name="submit" value="Create My Account" />
 		</center>
 	</form>
 </body>
