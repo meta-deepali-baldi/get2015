@@ -1,0 +1,40 @@
+header {
+	padding-top: 5%;
+	font-family: verdana;
+	font-size: 22px;
+	text-align: center;
+}
+
+.container {
+	margin-left: 20%;
+	text-align: center;
+	font-size: 18px;
+	background-color: #CCEEFF;
+	height: 70%;
+	width: 60%;
+}
+
+#demo {
+	padding: 5%;
+	text-align: center;
+}
+
+label {
+	float: left;
+	width: 15%;
+	margin-right: 0.3em;
+	margin-left: 20%;
+}
+
+input {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	border: none;
+	font-size: 16px;
+	outline: 0;
+	padding: 7px;
+	width: 40%;
+}
+
+.space {
+	line-height: 80px;
+}

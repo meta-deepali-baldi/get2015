@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Location Tracker</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="LocationTrackerStyle.css" type="text/css">
+	<script>
+		function getLocation() {
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(showPosition);
+			} else { 
+				demo.innerHTML = "Geolocation is not supported by this browser.";
+			}
+		}
+
+		function showPosition(position) {
+			demo.innerHTML = "<label>Longitude :</label><input type='text' value="+ position.coords.latitude +" name='latitude' /><div class='space' ><label>Latitude : </label><input type='text' value="+ position.coords.longitude+" name='longitude' /></div>" ;	
+		}
+	</script>
+	</head>
+	<body>
+		<header>
+			<h3>Location Tracker</h3>
+		</header>
+		<div class="container">
+			<p>Click the button to get your location.</p>
+			<div id="demo"></div>
+			<button onclick="getLocation()">Check My Location</button>
+		</div>
+	</body>
+</html>
+

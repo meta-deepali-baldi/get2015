@@ -1,0 +1,33 @@
+header {
+	padding-top: 5%;
+	font-family: verdana;
+	text-align: center;
+}
+
+.container {
+	padding: 5%;
+	margin-left: 15%;
+	height: 70%;
+	width: 60%;
+	text-align: center;
+	background-color: #CCEEFF;
+}
+
+#myCanvas {
+	width: 200;
+	height: 100;
+	border: 2px solid #110000;
+}
+
+input {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 16px;
+	width: 20%;
+}
+
+a{
+	decoration:none;
+}
+.space {
+	line-height: 80px;
+}
