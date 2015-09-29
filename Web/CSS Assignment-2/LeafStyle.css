@@ -1,0 +1,28 @@
+body {
+	margin-left: 30%;
+	margin-top: 2%;
+}
+
+.leaf {
+	width: 250px;
+	height: 150px;
+	background: #78A947;
+	border-width: 4px 30px 4px 30px;
+	border-style: solid;
+	border-color: #3B5323;
+	border-radius: 120px 0 120px 0;
+	-moz-border-radius: 120px 0 120px 0;
+	-webkit-border-radius: 120px 0 120px 0;
+}
+
+main {
+	width: 500px;
+	height: 450px;
+	background: url("images1.jpg"), url("images2.jpg"), url("images3.png"),
+		url("images4.jpg");
+	background-position: left top, left bottom, right bottom, right top;
+	background-repeat: no-repeat;
+	background-size: 50%, 50%, 71%, 50%;
+	padding-top: 20%;
+	padding-left: 16%;
+}

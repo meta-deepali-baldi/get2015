@@ -1,0 +1,11 @@
+CSS- Assignments
+Session 2
+Duration (6 Hrs)
+
+Q1.  Create a Leaf sample using CSS3 Borders and also use Multiple background in the same example.
+
+Q2. Create a DIV with dimension 200px x 200px. 
+Make copy of parent DIV and apply Transform on those DIVs (Scale, Rotate and Skew)
+
+Q3. Create a DIV with dimension 200px x 200px. 
+Apply animation (color and position change) on it and make it run 3 times and stop.
