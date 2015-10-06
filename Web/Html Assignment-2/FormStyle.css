@@ -1,6 +1,6 @@
 body {
 	background-image: url("background.png");
-	padding-left: 20%;
+	padding-left: 10%;
 	line-height: 60px;
 }
 
@@ -23,13 +23,9 @@ header {
 	box-shadow: 10px 5px #998D7B;
 }
 
-.space {
-	line-height: 60px;
-}
-
 label {
 	float: left;
-	width: 30%;
+	width: 15%;
 	text-align: left;
 	margin-right: 0.5em;
 }
@@ -45,9 +41,4 @@ input {
 
 input :focus {
 	border: 1px SOLID #EDEDED;
-}
-
-.submit-design {
-	text-align: center;
-	padding-left: 10px;
 }

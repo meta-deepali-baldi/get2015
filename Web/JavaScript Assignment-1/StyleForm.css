@@ -1,0 +1,72 @@
+body {
+	margin-left: 20%;
+	margin-top: 0%;
+	text-align: center;
+}
+
+header {
+	padding-top: 3%;
+	font-family: "Verdana";
+	font-weight: bold;
+	font-size: 24px;
+}
+
+.content {
+	padding-left: 10%;
+	background: #F2F2F2;
+	width: 70%;
+	font-family: "Verdana";
+	border: 0.5% solid #000fff;
+	box-shadow: 10px 5px #998D7B;
+}
+
+.space {
+	line-height: 30px;
+}
+
+label {
+	float: left;
+	width: 20%;
+	text-align: left;
+	margin-right: 0.5em;
+}
+
+input {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	border: none;
+	font-size: 16px;
+	outline: 0;
+	padding: 1%;
+	width: 50%;
+}
+
+input :focus {
+	border: 1px SOLID #EDEDED;
+}
+
+select {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	border: none;
+	font-size: 16px;
+	outline: 0;
+	padding: 1%;
+	width: 52%;
+}
+
+select :focus {
+	border: 1px SOLID #EDEDED;
+}
+
+textarea {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	border: none;
+	font-size: 16px;
+	outline: 0;
+	padding: 1%;
+	width: 50%;
+}
+
+.submit-design {
+	text-align: center;
+	padding-left: 10px;
+}

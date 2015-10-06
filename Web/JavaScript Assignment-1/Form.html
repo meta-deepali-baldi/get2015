@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Form Validation using JavaScript</title>
+<script type="text/javascript" src="FormJavaScript.js"></script>
+<link rel="stylesheet" href="StyleForm.css" type="text/css">
+
+</head>
+<body>
+
+
+	<form id="form" name="form" action=""
+		onsubmit="return validateComplete();">
+
+		<div class="content">
+			<div class="space">
+				<header>
+				<h3>Create your account</h3>
+				</header>
+			</div>
+			<div class="space">
+				<label>First Name :</label><input type="text" value=""
+					id="firstName" name="first_Name"
+					onkeypress="return namevalidate(event);" placeholder="First Name" />
+			</div>
+			<br />
+			<div class="space">
+				<label>Last Name :</label><input type="text" value="" id="lastName"
+					name="last_Name" onkeypress="return namevalidate(event);"
+					placeholder="Last Name" />
+			</div>
+			<br />
+			<div class="space">
+				<label>Password :</label><input type="password" id="pwd"
+					name="password" placeholder="Enter password" />
+			</div>
+			<br />
+			<div class="space">
+				<label>Re-enter Password :</label><input type="password"
+					id="confirm_pwd" name="confirmPassword"
+					placeholder="Re-enter password" />
+			</div>
+			<br />
+			<div class="space">
+				<label>Age :</label><input type="text" id="age" name="age"
+					placeholder="Enter Age" />
+			</div>
+			<br />
+			<div class="space">
+				<label>State :</label> <select name="state" id="state"
+					onchange="selectCountry();">
+					<option>-Select State-</option>
+					<option>Rajasthan</option>
+					<option>Madhya Pradesh</option>
+					<option>Maharashtra</option>
+					<option>Gujarat</option>
+				</select>
+			</div>
+			<br />
+			<div class="space">
+				<label>City :</label> <select name="city" id="city">
+					<option>-Select City-</option>
+				</select>
+			</div>
+			<br />
+			<div class="space">
+				<label>Address Line :</label>
+				<textarea rows="5" cols="30" id="address"
+					placeholder="Enter address here"></textarea>
+			</div>
+			<br />
+			<div class="space">
+				<div class="check">
+					<input type="checkbox" id="condition" name="condition"
+						onchange="checkCondition();" />I accept condition
+				</div>
+			</div>
+			<br />
+			<div class="space">
+				<div class="submit">
+					<input name="Submit" type="submit" id="create" value="Create"
+						disabled />
+				</div>
+				<br />
+			</div>
+		</div>
+	</form>
+</body>
+</html>
+
