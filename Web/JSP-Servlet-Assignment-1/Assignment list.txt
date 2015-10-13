@@ -1,0 +1,15 @@
+Servlet - Assignments
+Session 1
+Duration (Number of Hrs)
+
+
+Write a web application that:
+Contains a user registration information form that requests a 	servlet.
+Contains a servlet that accepts the request sent by client, validates the form data and displays the validation result on the browser.
+
+Write a web application that:
+Contains a user registration information form that requests a 	servlet.
+Contains a servlet that accepts the request sent by client, validates the form data and dispatches the validation result to the other servlet and that servlet displays the validation result.
+
+
+Note: The registration form can be the form created in previous assignment and the information sent must be validated on the server side.

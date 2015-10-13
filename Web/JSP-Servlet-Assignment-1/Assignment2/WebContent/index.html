@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="FormStyle.css" type="text/css">
+</head>
+<body>
+	<header>
+		Metagurukul Account registration
+	</header>
+	<div class="content">
+		<form action="Registeration" method="post">
+			<div class="space">
+				<label>Name</label> 
+				<input type="text" name="first_name" id="name" placeholder="First Name" pattern="[A-Za-z]{0,}" autofocus /> 
+				<input type="text" id="name1" name="last_name" placeholder="Last Name" pattern="[A-Za-z]{0,}" autofocus />
+			</div>
+			<div class="space">
+				<label>Gender</label>
+				<select name="gender" id="gender">
+					<option>-Select One-</option>
+					<option>Male</option>
+					<option>Female</option>
+				</select>
+			</div>
+			<div class="space">
+				<label>Date of Birth</label>
+				<input type="date" name="Dob" autofocus >
+			</div>
+			<div class="space">
+				<label>Country</label> 
+				<select name="country" id="country">
+				<option>-Select One-</option>
+					<option>India</option>
+					<option>USA</option>
+					<option>Australia</option>
+					<option>UK</option>
+					<option>West Indies</option>
+					<option>Netherlands</option>
+				</select>
+			</div>
+			<div class="space">
+				<label>Metagurukul ID</label>
+				<input type="email" id="email" name="email" pattern="([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})" autofocus /> 
+			</div>
+			<div class="space">
+				<label>Password</label>
+				<input type="password" name="pwd" id="pwd" autofocus >
+			</div>
+			<div class="space">
+				<label>Re-type Password</label>
+				<input type="password" id="cpwd" name="cpwd" autofocus >
+			</div>
+			<div class="space">
+				<label>Select Question 1</label>
+				<select name="questionFirst" id="question1">
+					<option>-Select One-</option>
+					<option>-What is your birth place</option>
+					<option>What is your phone number</option>
+				</select>
+			</div>
+			<div class="space">
+				<label>Your answer</label>
+				<input type="text" name="answerFirst" id="answer1" maxlength=30 autofocus >
+			</div>
+			<div class="space">
+				<label>Select Question 2</label>
+				<select name="questionSecond" id="question2">
+					<option>-Select One-</option>
+					<option>-What is your mother's maiden name</option>
+					<option>What is your favourite music genre</option>
+				</select>
+			</div>
+			<div class="space">
+				<label>Your answer</label>
+				<input type="text" name="answerSecond" id="answer2" maxlength=30 autofocus >
+			</div>
+			<div class="submit">
+			<div class="space">
+				<input type="submit" name="submit" value="Create My Account" />
+			</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
