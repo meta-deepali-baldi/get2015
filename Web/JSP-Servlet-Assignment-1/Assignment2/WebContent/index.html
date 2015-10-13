@@ -10,7 +10,7 @@
 		Metagurukul Account registration
 	</header>
 	<div class="content">
-		<form action="Registeration" method="post">
+		<form action="Registeration" method="get">
 			<div class="space">
 				<label>Name</label> 
 				<input type="text" name="first_name" id="name" placeholder="First Name" pattern="[A-Za-z]{0,}" autofocus /> 
@@ -42,15 +42,15 @@
 			</div>
 			<div class="space">
 				<label>Metagurukul ID</label>
-				<input type="email" id="email" name="email" pattern="([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})" autofocus /> 
+				<input type="email" id="email" name="email" placeholder="Email" pattern="([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})" autofocus /> 
 			</div>
 			<div class="space">
 				<label>Password</label>
-				<input type="password" name="pwd" id="pwd" autofocus >
+				<input type="password" name="pwd" id="pwd" autofocus placeholder="Password" >
 			</div>
 			<div class="space">
 				<label>Re-type Password</label>
-				<input type="password" id="cpwd" name="cpwd" autofocus >
+				<input type="password" id="cpwd" name="cpwd" autofocus placeholder="Reenter Password" >
 			</div>
 			<div class="space">
 				<label>Select Question 1</label>
@@ -62,7 +62,7 @@
 			</div>
 			<div class="space">
 				<label>Your answer</label>
-				<input type="text" name="answerFirst" id="answer1" maxlength=30 autofocus >
+				<input type="text" name="answerFirst" id="answer1" maxlength=30 autofocus placeholder="Enter Answer Here">
 			</div>
 			<div class="space">
 				<label>Select Question 2</label>
@@ -74,7 +74,7 @@
 			</div>
 			<div class="space">
 				<label>Your answer</label>
-				<input type="text" name="answerSecond" id="answer2" maxlength=30 autofocus >
+				<input type="text" name="answerSecond" id="answer2" maxlength=30 autofocus placeholder="Enter Answer Here">
 			</div>
 			<div class="submit">
 			<div class="space">
