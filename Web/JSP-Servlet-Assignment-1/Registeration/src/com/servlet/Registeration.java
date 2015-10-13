@@ -1,11 +1,14 @@
+/**
+ *
+Write a web application that:
+Contains a user registration information form that requests a 	servlet.
+Contains a servlet that accepts the request sent by client, validates the form data and displays the validation result on the browser.
+ */
+ 
 package com.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Enumeration;
-
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,6 +16,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
+ * Deepali
+ * 
  * Servlet implementation class Registeration
  */
 @WebServlet("/Registeration")
@@ -27,14 +32,15 @@ public class Registeration extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter pw = response.getWriter();
 		boolean flag = true;
+		
 		response.setContentType("text/html");
 		pw.println("This is Registeration page.<br>");
-
-		if (request.getParameter("first_name")=="") {
+		//Validations
+		if (request.getParameter("first_name") == "") {
 			flag = false;
 			pw.println("First Name not Filled<br>");
 		}
-		if (request.getParameter("last_name")=="") {
+		if (request.getParameter("last_name") == "") {
 			flag = false;
 			pw.println("Last name not Filled<br>");
 		}
@@ -42,7 +48,7 @@ public class Registeration extends HttpServlet {
 			flag = false;
 			pw.println("Gender is not selected<br>");
 		}
-		if (request.getParameter("dob")=="") {
+		if (request.getParameter("dob") == "") {
 			flag = false;
 			pw.println("Date of Birth Not Selected<br>");
 		}
@@ -50,27 +56,25 @@ public class Registeration extends HttpServlet {
 			flag = false;
 			pw.println("country is not selected<br>");
 		}
-		if (request.getParameter("email")=="") {
+		if (request.getParameter("email") == "") {
 			flag = false;
 			pw.println("Email not specified<br>");
 		}
-		if (request.getParameter("pwd")=="") {
+		if (request.getParameter("pwd") == "") {
 			flag = false;
 			pw.println("Password not specified<br>");
 		}
-		if(request.getParameter("pwd").length() < 8 )
-		{
+		if (request.getParameter("pwd").length() < 8) {
 			pw.println("Password Length should be greater than 8 <br>");
-		     flag=false;
+			flag = false;
 		}
-		if (request.getParameter("cpwd")=="") {
+		if (request.getParameter("cpwd") == "") {
 			flag = false;
 			pw.println("Reenter password not specified<br>");
 		}
-		if(request.getParameter("cpwd").length() < 8 )
-		{
+		if (request.getParameter("cpwd").length() < 8) {
 			pw.println("Reenter Password Length should be greater than 8 <br>");
-		     flag=false;
+			flag = false;
 		}
 		if (!request.getParameter("pwd").equals(request.getParameter("cpwd"))) {
 			flag = false;
@@ -80,20 +84,20 @@ public class Registeration extends HttpServlet {
 			flag = false;
 			pw.println("First Question is not Selected<br>");
 		}
-		if (request.getParameter("answerFirst")=="") {
+		if (request.getParameter("answerFirst") == "") {
 			flag = false;
 			pw.println("Answer of first Question not specified<br>");
 		}
-		
+
 		if (request.getParameter("questionSecond").equals("-Select One-")) {
 			flag = false;
 			pw.println("Second Question is not Selected<br>");
 		}
-		if (request.getParameter("answerSecond")=="") {
+		if (request.getParameter("answerSecond") == "") {
 			flag = false;
 			pw.println("Answer of first Question not specified<br>");
 		}
-		
+
 		if (flag == true) {
 			pw.println("Form is validated at server side<br>");
 
