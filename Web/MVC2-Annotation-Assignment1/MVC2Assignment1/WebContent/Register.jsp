@@ -86,7 +86,8 @@
 						value="<%=date%>" /></td>
 				</tr>
 		
-			<tr><td><input type="submit" name="submit" value="<%=submit%>" /></td></tr>
+				<tr><td colspan="2"><div class="submit">
+				<input type="submit" name="submit" value="<%=submit%>" /></div></td></tr>
 				</table>
 
 		</form>
