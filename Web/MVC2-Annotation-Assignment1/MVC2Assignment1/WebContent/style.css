@@ -23,7 +23,7 @@ body {
 .content {
 	text-align:left;
 	margin-top: 3%;
-	margin-left: 25%;
+	margin-left: 20%;
 	padding-top: 5%;
 	padding-left: 15%;
 	background: #F0F0F0;
@@ -51,6 +51,6 @@ input :focus {
 
 
 .submit {
-	padding-left: 20%;
+	padding-left: 50%;
 	border: 1px SOLID #EDEDED;
 }
