@@ -1,0 +1,25 @@
+Design Patterns­ Assignments
+
+Assignment 1:  Write a Logger class (Singleton) to log application 
+
+exceptions in Log file.
+
+Assignment 2: Write an application to create a Company and its 
+
+employees(Developers) without exposing their public constructors.
+
+ Implement Classes(Factory Pattern) like:
+
+Company ­>Developer 
+
+class Developer{
+
+string Name    {get;set;}
+
+string Role        {get;set;}}
+
+class Company extend Developer  {
+
+public static List<Developer> getDevelopers(){}
+
+}
