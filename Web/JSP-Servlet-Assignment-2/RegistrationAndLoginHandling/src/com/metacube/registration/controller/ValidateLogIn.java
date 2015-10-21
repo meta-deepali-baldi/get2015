@@ -22,6 +22,8 @@ package com.metacube.registration.controller;
 
 import java.io.IOException;
 import java.net.URLEncoder;
+import java.sql.Connection;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -33,8 +35,8 @@ import com.metacube.registration.model.User;
 
 /**
  * @author Deepali
- *
- * Servlet implementation class ValidateLogIn
+ * 
+ *         Servlet implementation class ValidateLogIn
  */
 public class ValidateLogIn extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -45,12 +47,12 @@ public class ValidateLogIn extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		//getting values from request
+		// getting values from request
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		String message = "";
 		int flag = 0;
-		//validating username field
+		// validating username field
 		if (username.equals(null) || username.equals("")) {
 			flag = 1;
 			message += "User Name field Empty";
@@ -65,17 +67,21 @@ public class ValidateLogIn extends HttpServlet {
 			response.sendRedirect("login.jsp?message="
 					+ URLEncoder.encode(message, "UTF-8"));
 		} else {
-			//checking if user is validate or not
+			// checking if user is validate or not
 			User user = new User();
 			user.setUsername(username);
 			user.setPassword(password);
-			
-			if (UserRegisterationDao.isValidUser(user, ConnectionUtil.getConnection())) {
-				//if user is validate then redirect to profile page
+			Connection connection = ConnectionUtil.getConnection();
+			if (connection == null) {
+				connection = new ConnectionUtil().createConnection();
+				new UserRegisterationDao(connection);
+			}
+			if (UserRegisterationDao.isValidUser(user, connection)) {
+				// if user is validate then redirect to profile page
 				response.sendRedirect("profile.jsp");
 
 			} else {
-				//if not valid user then display message on login page
+				// if not valid user then display message on login page
 				response.sendRedirect("login.jsp?message="
 						+ URLEncoder.encode("Invalid Username or Password",
 								"UTF-8"));
