@@ -33,11 +33,10 @@ import com.metacube.registration.databaseconfiguration.ConnectionUtil;
 import com.metacube.registration.helper.UserRegisterationDao;
 import com.metacube.registration.model.User;
 
-
 /**
  * @author Deepali
- *
- * Servlet implementation class InsertIntoDatabase
+ * 
+ *         Servlet implementation class InsertIntoDatabase
  */
 public class InsertUserIntoDatabase extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -59,12 +58,15 @@ public class InsertUserIntoDatabase extends HttpServlet {
 		user.setEmail(email);
 		user.setPassword(password);
 		// getting Connection
-		Connection connection = new ConnectionUtil().createConnection();
+		Connection connection = ConnectionUtil.getConnection();
+		if (connection == null) {
+			connection = new ConnectionUtil().createConnection();
+			new UserRegisterationDao(connection);
+		}
 
 		// inserting user into database
-		UserRegisterationDao registerationDao = new UserRegisterationDao(
+		boolean flag = UserRegisterationDao.insertIntoUserTable(user,
 				connection);
-		boolean flag = registerationDao.insertIntoUserTable(user, connection);
 		if (flag) {// if user inserted then redirect to login page
 			response.sendRedirect("login.jsp?message="
 					+ URLEncoder.encode("Successfully Registered, now Login",
