@@ -1,12 +1,18 @@
-<%@page import="com.metacube.carportal.dbconfig.ConnectionFactory"%>
+<%@page import="com.metacube.carportal.service.*"%>
 <%@page import="com.metacube.carportal.db.helper.CarPortalDao"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.Map"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="java.sql.*"%>
-<%@page session="false"%>
+
+
+<%
+
+session.setAttribute("username",null);
+%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -139,7 +145,7 @@
 			<h2 class="header2">Search Car</h2>
 			<br>
 			<form action="search-car" method="post">
-				<input type="checkbox" name="search" value="make">Search By Make 
+				<input type="checkbox" name="search" value="make">Search By Company
 				<input type="checkbox" name="search" value="price">Search By budget<br/><br/>
 				<input type="submit" value="Search">
 			</form>
@@ -155,11 +161,7 @@
 			<%=request.getAttribute("display")%> 
 			<% }
 		 	if (request.getParameter("make") != null) {
-		 		Connection connection = ConnectionFactory.getConnection();
-		 		if (connection == null) {
-		 			connection = new ConnectionFactory().createConnection();
-		 			new CarPortalDao(connection);
-		 		}
+		 		Connection connection = ConnectionForServlet.getConnectionForServlet();
 		 		makeList = CarPortalDao.selectListOfMakeOfCar(connection);
 		 		List<String> modelList = CarPortalDao
 		 				.selectListOfModelOfCarBasedOnMake(connection,
