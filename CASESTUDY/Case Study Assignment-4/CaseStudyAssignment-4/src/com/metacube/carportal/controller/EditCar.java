@@ -35,9 +35,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.metacube.carportal.db.helper.CarPortalDao;
-import com.metacube.carportal.dbconfig.ConnectionFactory;
-import com.metacube.carportal.exception.CarDekhoException;
 import com.metacube.carportal.model.Car;
+import com.metacube.carportal.service.ConnectionForServlet;
+import com.metacube.carportal.service.Validation;
 
 /**
  * @author Deepali Servlet implementation class EditCar
@@ -53,60 +53,16 @@ public class EditCar extends HttpServlet {
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(true);
-		Connection connection = null;
-		// getting connection
-		try {
-			connection = ConnectionFactory.getConnection();
-			if (connection == null) {
-				connection = new ConnectionFactory().createConnection();
-				new CarPortalDao(connection);
-			}
-		} catch (CarDekhoException e) {
-			e.printStackTrace();
-		}
-
-		int flag = 0;
-		String message = "";
-		// Validations for car company name
-		if (request.getParameter("make").equals(null)
-				|| request.getParameter("make").equals("")) {
-			flag = 1;
-			message += "Make field Empty";
-		} // Validations for Model
-		else if (request.getParameter("model").equals(null)
-				|| request.getParameter("model").equals("")) {
-			flag = 1;
-			message += "Model field Empty";
-			// Validations for Engine in cc
-		} else if (request.getParameter("engineInCC").equals(null)
-				|| request.getParameter("engineInCC").equals("")) {
-			flag = 1;
-			message += "EngineInCC field Empty";
-			// Validations for Fuel Capacity
-		} else if (request.getParameter("fuelCapacity").equals(null)
-				|| request.getParameter("fuelCapacity").equals("")) {
-			flag = 1;
-			message += "FuelCapacity field Empty";
-			// Validations for Milage
-		} else if (request.getParameter("milage").equals(null)
-				|| request.getParameter("milage").equals("")) {
-			flag = 1;
-			message += "Milage field Empty";
-			// Validations for price
-		} else if (request.getParameter("price").equals(null)
-				|| request.getParameter("price").equals("")) {
-			flag = 1;
-			message += "Price field Empty";
-			// Validations for roadTax
-		}
 		
-		
-		
-		if (flag == 1) {
+		//Validation on Car details
+		String message=Validation.validationOnCarDetails(request.getParameter("make"), request.getParameter("model"), request.getParameter("engineInCC"), request.getParameter("fuelCapacity"), request.getParameter("milage"), request.getParameter("price"),"abc");
+		                                                                                                                               
+		if (message.charAt(0)=='1') {
 			// redirecting the response to Edit page for showing error
 			response.sendRedirect("EditCar.jsp?message="
-					+ URLEncoder.encode(message, "UTF-8"));
+					+ URLEncoder.encode(message.substring(1), "UTF-8"));
 		} else {
+			Connection connection=ConnectionForServlet.getConnectionForServlet();
 			// getting car detail in table for this make and model
 			List<Car> car = CarPortalDao.selectCarBasedOnMakeAndModel(
 					connection, (String) request.getParameter("make"),
