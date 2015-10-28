@@ -40,6 +40,8 @@ import com.metacube.carportal.db.helper.CarPortalDao;
 import com.metacube.carportal.dbconfig.ConnectionFactory;
 import com.metacube.carportal.exception.CarDekhoException;
 import com.metacube.carportal.model.Car;
+import com.metacube.carportal.service.ConnectionForServlet;
+import com.metacube.carportal.service.Validation;
 
 /**
  * @Deepali
@@ -55,54 +57,13 @@ public class AddCar extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		int flag = 0;
-		String message = "";
-		Connection connection = null;
-		//getting connection
-		try {
-			connection = ConnectionFactory.getConnection();
-			if (connection == null) {
-				connection = new ConnectionFactory().createConnection();
-				new CarPortalDao(connection);
-			}
-
-		} catch (CarDekhoException e) {
-			e.printStackTrace();
-		}
-		//Validations for car company name
-		if (request.getParameter("make").equals(null) || request.getParameter("make").equals("")) {
-			flag = 1;
-			message += "Make field Empty";
-		} // Validations for Model
-		else if (request.getParameter("model").equals(null) || request.getParameter("model").equals("")) {
-			flag = 1;
-			message += "Model field Empty";
-			//Validations for Engine in cc
-		}else if (request.getParameter("engineInCC").equals(null) || request.getParameter("engineInCC").equals("")) {
-			flag = 1;
-			message += "EngineInCC field Empty";
-			//Validations for Fuel Capacity
-		}else if (request.getParameter("fuelCapacity").equals(null) || request.getParameter("fuelCapacity").equals("")) {
-			flag = 1;
-			message += "FuelCapacity field Empty";
-			//Validations for Milage
-		}else if (request.getParameter("milage").equals(null) || request.getParameter("milage").equals("")) {
-			flag = 1;
-			message += "Milage field Empty";
-			//Validations for price
-		}else if (request.getParameter("price").equals(null) || request.getParameter("price").equals("")) {
-			flag = 1;
-			message += "Price field Empty";
-			//Validations for roadTax
-		}else if (request.getParameter("roadTax").equals(null) || request.getParameter("roadTax").equals("")) {
-			flag = 1;
-			message += "RoadTax field Empty";
-		}
-
-		if (flag == 1) {
+		//Validation on Car details
+				String message=Validation.validationOnCarDetails(request.getParameter("make"), request.getParameter("model"), request.getParameter("engineInCC"), request.getParameter("fuelCapacity"), request.getParameter("milage"), request.getParameter("price"),request.getParameter("roadTax"));
+	
+		if (message.charAt(0)=='1') {
 			// redirecting the response to add car page
 			response.sendRedirect("addCar.jsp?message="
-					+ URLEncoder.encode(message, "UTF-8"));
+					+ URLEncoder.encode(message.substring(1), "UTF-8"));
 		} else {
 			//insertion of car in table
 			int insert = CarPortalDao.insertIntoCarTable(
@@ -117,7 +78,7 @@ public class AddCar extends HttpServlet {
 											.parseDouble(request
 													.getParameter("price")),
 									Double.parseDouble(request
-											.getParameter("roadTax")), ""),connection);
+											.getParameter("roadTax")), ""),ConnectionForServlet.getConnectionForServlet());
 			if (insert == 1) {//insertion of car successful
 				
 				//redirected to insert image of car
@@ -127,7 +88,7 @@ public class AddCar extends HttpServlet {
 				rd.forward(request, response);
 			} else {//if insertion not possible
 				//redirected to add car again 
-				request.setAttribute("message", "Car not inserted");
+				request.setAttribute("message", "Car not inserted successfully");
 
 				RequestDispatcher rd = request
 						.getRequestDispatcher("/addCar.jsp");
@@ -147,20 +108,8 @@ public class AddCar extends HttpServlet {
 		//getting company name of car
 		HttpSession session = request.getSession(true);
 		String make = (String) session.getAttribute("make");
-		//getting connection
-		Connection connection = null;
-		try {
-			connection = ConnectionFactory.getConnection();
-			if (connection == null) {
-				connection = new ConnectionFactory().createConnection();
-				new CarPortalDao(connection);
-			}
-
-		} catch (CarDekhoException e) {
-			e.printStackTrace();
-		}
 		//inserting image path of car
-		int insert = CarPortalDao.updateImagePathOfCar(connection, image_path,
+		int insert = CarPortalDao.updateImagePathOfCar(ConnectionForServlet.getConnectionForServlet(), image_path,
 				make);
 		if (insert == 1) {//if inserted successfully
 			//redirect to admin home page
@@ -224,7 +173,7 @@ public class AddCar extends HttpServlet {
 			int endPos = ((file.substring(0, boundaryLocation)).getBytes()).length;
 			//creating that image at given path
 			File ff = new File(
-					"E:/Java/eclipse/CaseStudyAssignment-4/WebContent/images/"
+					"C:/Users/Deepali/workspace/CaseStudyAssignment-4/WebContent/images/"
 							+ saveFile);
 			FileOutputStream fileOut = null;
 			try {
