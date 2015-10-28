@@ -1,4 +1,4 @@
-<%@page import="com.metacube.carportal.dbconfig.ConnectionFactory"%>
+<%@page import="com.metacube.carportal.service.*"%>
 <%@page import="com.metacube.carportal.db.helper.CarPortalDao"%>
 <%@page import="com.metacube.carportal.model.Car"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -58,11 +58,7 @@
 			<br/>
 	
 			<%
-				Connection connection = ConnectionFactory.getConnection();
-				if (connection == null) {
-					connection = new ConnectionFactory().createConnection();
-					new CarPortalDao(connection);
-				}
+				Connection connection=ConnectionForServlet.getConnectionForServlet();
 				List<String> makeList = CarPortalDao
 						.selectListOfMakeOfCar(connection);
 			%>
@@ -136,3 +132,4 @@
 		</div>
 	</body>
 </html>
+
