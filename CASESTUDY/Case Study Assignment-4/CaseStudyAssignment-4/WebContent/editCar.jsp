@@ -120,10 +120,10 @@
 	 					}
 					%> 
 					<br/><br/><br/>
-					<input type="text" name="engineInCC" placeholder="EngineInCC" pattern="[0-9]+(.[0-9]{1,2})"> <br/>
-					<input type="text" name="fuelCapacity" placeholder="Fuel Capacity" pattern="[0-9]+(.[0-9]{1,2})"> <br/>
-					<input type="text" name="milage" placeholder="Milage" pattern="[0-9]+(.[0-9]{1,2})"> <br/>
-					<input	type="text" name="price" placeholder="Price" pattern="[0-9]+(.[0-9]{1,2})">
+					<input type="text" name="engineInCC" placeholder="EngineInCC" value="" pattern="[0-9]+(.[0-9]{1,2})"> <br/>
+					<input type="text" name="fuelCapacity" placeholder="Fuel Capacity" value="" pattern="[0-9]+(.[0-9]{1,2})"> <br/>
+					<input type="text" name="milage" placeholder="Milage" value="" pattern="[0-9]+(.[0-9]{1,2})"> <br/>
+					<input	type="text" name="price" placeholder="Price" value="" pattern="[0-9]+(.[0-9]{1,2})">
 					<br/>
 					<div class="submit-design">
 						<span class="space"> 
