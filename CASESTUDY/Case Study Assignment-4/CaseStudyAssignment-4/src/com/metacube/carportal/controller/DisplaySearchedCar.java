@@ -31,12 +31,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.metacube.carportal.db.helper.CarPortalDao;
-import com.metacube.carportal.dbconfig.ConnectionFactory;
-import com.metacube.carportal.exception.CarDekhoException;
 import com.metacube.carportal.model.Car;
+import com.metacube.carportal.service.ConnectionForServlet;
 
 /**
  * @Deepali
@@ -53,25 +51,10 @@ public class DisplaySearchedCar extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		//To check if request is from admin or not
-		if (request.getParameter("username") == null) {
-			HttpSession session = request.getSession(true);
-			session.setAttribute("username", null);
-		}
+		
 		List<Car> carList = null;
-		Connection connection = null;
-		//Getting connection
-		try {
-			connection = ConnectionFactory.getConnection();
-			if (connection == null) {
-				connection = new ConnectionFactory().createConnection();
-				new CarPortalDao(connection);
-			}
-
-		} catch (CarDekhoException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+		//Getting Connection
+		Connection connection = ConnectionForServlet.getConnectionForServlet();
 		//search by model and make
 		if (request.getParameter("model") != null) {
 			//getting carlist for this make and model
