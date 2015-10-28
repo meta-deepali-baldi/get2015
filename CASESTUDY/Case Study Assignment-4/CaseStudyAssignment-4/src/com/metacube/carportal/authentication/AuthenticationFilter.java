@@ -14,7 +14,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
  
-@WebFilter("/AuthenticationFilter")
+/*@WebFilter(filterName = "AuthenticationFilter",
+urlPatterns = {"/*"})*/
 public class AuthenticationFilter implements Filter {
  
     private ServletContext context;
