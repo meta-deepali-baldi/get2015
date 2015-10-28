@@ -1,4 +1,4 @@
-<%@page import="com.metacube.carportal.dbconfig.ConnectionFactory"%>
+<%@page import="com.metacube.carportal.service.*"%>
 <%@page import="com.metacube.carportal.db.helper.CarPortalDao"%>
 <%@page import="com.metacube.carportal.model.Car"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -65,7 +65,7 @@
 	
 					<h1 class="header2">Search Car</h1>
 					<form action="search-car" method="get">
-					<label>Search By Make</label><input type="checkbox" name="search" value="make"><br /><br />
+					<label>Search By Company</label><input type="checkbox" name="search" value="make"><br /><br />
 					<label>Search By Budget</label><input type="checkbox" name="search" value="price"> 
 					<br/><br />
 						<input type="submit" value="Search">
@@ -80,12 +80,9 @@
 					<%=request.getAttribute("display")%> 
 					<%
 						}
+						Connection connection=ConnectionForServlet.getConnectionForServlet();
 					 	if (request.getParameter("make") != null) {
-					 		Connection connection=ConnectionFactory.getConnection();
-							if(connection==null){
-								connection=new ConnectionFactory().createConnection();
-								new CarPortalDao(connection);
-							}
+					 		
 							makeList=CarPortalDao.selectListOfMakeOfCar(connection);
 					 		List<String> modelList = CarPortalDao.selectListOfModelOfCarBasedOnMake(
 					 						connection,(String) request.getParameter("make") );
@@ -139,8 +136,10 @@
 	
 	
 		<%
+		List<Car> carList=CarPortalDao.selectListOfCar(connection);
 			if (request.getAttribute("carList") != null) {
-				List<Car> carList = (List<Car>) request.getAttribute("carList");
+				carList = (List<Car>) request.getAttribute("carList");
+			}
 				for (Car car : carList) {
 		%>
 		<div class="offer_list clearfix" id="offer_list">
@@ -167,7 +166,7 @@
 			</div>
 		</div>
 		<%
-			}
+		
 		}
 		%>
 	
