@@ -37,8 +37,8 @@
 					<div class="left" style="width: 100%">
 						<h2>Log In</h2>
 						<form action="validate-admin" method="post">
-							<input name="username" type="text" placeholder="Username" /><br />
-							<input name="password" type="password" placeholder="Password" /><br />
+							<input name="username" type="text" placeholder="Username" value="" /><br />
+							<input name="password" type="password" placeholder="Password" value=""/><br />
 							<input type="submit" value="LogIn" />
 						</form>
 						<%
