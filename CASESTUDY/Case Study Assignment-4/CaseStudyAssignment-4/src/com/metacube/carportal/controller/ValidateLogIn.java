@@ -31,6 +31,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.metacube.carportal.service.Validation;
+
 /**
  * @author Deepali
  * 
@@ -50,22 +52,12 @@ public class ValidateLogIn extends HttpServlet {
 		// getting values from request
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		String message = "";
-		int flag = 0;
-		// validating username field
-		if (username.equals(null) || username.equals("")) {
-			flag = 1;
-			message += "User Name field Empty";
-		} // check for empty password field
-		else if (password.equals(null) || password.equals("")) {
-			flag = 1;
-			message += "Password field Empty";
-		}
+		String message=Validation.validationOnLoginOfAdmin(username, password);
 
-		if (flag == 1) {
+		if (message.charAt(0)=='1') {
 			// redirecting the response to log in page
 			response.sendRedirect("login.jsp?message="
-					+ URLEncoder.encode(message, "UTF-8"));
+					+ URLEncoder.encode(message.substring(1), "UTF-8"));
 		} else {
 			// checking if user is validate or not
 
