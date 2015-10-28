@@ -26,7 +26,6 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URLEncoder;
-import java.sql.Connection;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -37,8 +36,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.metacube.carportal.db.helper.CarPortalDao;
-import com.metacube.carportal.dbconfig.ConnectionFactory;
-import com.metacube.carportal.exception.CarDekhoException;
 import com.metacube.carportal.model.Car;
 import com.metacube.carportal.service.ConnectionForServlet;
 import com.metacube.carportal.service.Validation;
