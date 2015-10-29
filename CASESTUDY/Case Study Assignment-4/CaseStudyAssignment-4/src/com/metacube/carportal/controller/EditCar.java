@@ -59,7 +59,7 @@ public class EditCar extends HttpServlet {
 		                                                                                                                               
 		if (message.charAt(0)=='1') {
 			// redirecting the response to Edit page for showing error
-			response.sendRedirect("EditCar.jsp?message="
+			response.sendRedirect("editCar.jsp?message="
 					+ URLEncoder.encode(message.substring(1), "UTF-8"));
 		} else {
 			Connection connection=ConnectionForServlet.getConnectionForServlet();
@@ -85,11 +85,10 @@ public class EditCar extends HttpServlet {
 			int update = CarPortalDao.updateCarDetails(connection, car.get(0));
 
 			if (update == -1) {//if not updated
-				request.setAttribute("message", "Car not inserted");
-				//redirected to edit car page again
-				RequestDispatcher rd = request
-						.getRequestDispatcher("/editCar.jsp");
-				rd.forward(request, response);
+				
+				response.sendRedirect("editCar.jsp?message="
+						+ URLEncoder.encode("Car not updated Successfully, Please Try Again", "UTF-8"));
+		
 			} else {
 				//redirected to home page of admin if successfully updated
 				request.setAttribute("username",
