@@ -80,16 +80,16 @@ public class AddCar extends HttpServlet {
 				
 				//redirected to insert image of car
 				request.setAttribute("make", request.getParameter("make"));
+				request.setAttribute("model", request.getParameter("model"));
+				System.out.println("yhgh"+request.getParameter("make"));
 				RequestDispatcher rd = request
 						.getRequestDispatcher("/addImageOfCar.jsp");
 				rd.forward(request, response);
 			} else {//if insertion not possible
 				//redirected to add car again 
-				request.setAttribute("message", "Car not inserted successfully");
-
-				RequestDispatcher rd = request
-						.getRequestDispatcher("/addCar.jsp");
-				rd.forward(request, response);
+				
+				response.sendRedirect("addCar.jsp?message="
+						+ URLEncoder.encode("Car not inserted successfully or Model Is Already Available", "UTF-8"));
 			}
 		}
 	}
@@ -105,9 +105,11 @@ public class AddCar extends HttpServlet {
 		//getting company name of car
 		HttpSession session = request.getSession(true);
 		String make = (String) session.getAttribute("make");
+		String model = (String) session.getAttribute("model");
+		System.out.println("dsfrs"+make+"rfcrv"+model);
 		//inserting image path of car
 		int insert = CarPortalDao.updateImagePathOfCar(ConnectionForServlet.getConnectionForServlet(), image_path,
-				make);
+				make,model);
 		if (insert == 1) {//if inserted successfully
 			//redirect to admin home page
 			request.setAttribute("username", session.getAttribute("username"));
