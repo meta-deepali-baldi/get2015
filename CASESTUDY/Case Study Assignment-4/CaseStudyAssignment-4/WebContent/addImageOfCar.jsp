@@ -1,10 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@page session="false"%>
 
 <%
-	HttpSession session = request.getSession();
-	session.setAttribute("make", request.getParameter("make"));
+session.setAttribute("make", request.getParameter("make"));
+session.setAttribute("model", request.getParameter("model"));
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -69,6 +68,10 @@
 			<div class="details">
 	
 				<form class="formclass" enctype="multipart/form-data" action="add-car" method="post">
+				<input type="text" name="make" value="<%=request.getParameter("make") %>" >
+				<br/><br/>
+				<input type="text" name="model" value="<%=request.getParameter("model") %>" >
+				<br/><br/>
 					<span class="space">
 						<label>Image Path:</label><input type="file" name="image_path" autofocus required />			
 					</span>
