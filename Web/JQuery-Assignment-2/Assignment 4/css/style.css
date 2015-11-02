@@ -1,0 +1,16 @@
+.main{
+	line-height:30px;
+}
+#content {
+	font-size:20px;
+	font-weight:bold;
+	padding-left:50%;
+}
+label{
+	float:left;
+	margin-left:40%;
+	width:13%;
+}
+input{
+	height:5%;
+}

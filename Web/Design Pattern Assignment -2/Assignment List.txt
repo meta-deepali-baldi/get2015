@@ -1,0 +1,10 @@
+Design Patterns- Assignments
+Session 2
+Duration (Number of Hrs) :8
+
+Assignment 1: Identify different design patterns in Java Framework.
+
+Assignment 2: Create a program for leave approval includes mentor,Senior mentor and HR manager. The Mentor ,senior mentor and HR manager can approve 1,2,5 days leaves respectively.(Chain of Responsibility)
+
+Assignment 3: Write a Template class for different formats of Cricket.(Template Method)
+
