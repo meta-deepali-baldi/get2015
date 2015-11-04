@@ -1,0 +1,34 @@
+Bootstrap Programming- Assignments
+Session 1
+Duration (3 hrs)
+
+Assignment 1:
+Using div and bootstrap classes, create below GRID layout for large size screen. 
+
+
+Assignment 2:
+Use grid layout given in assignment 1 and make it responsive for all type of devices. Column width ratio must be responsive as defined :
+
+Assignment 3:
+Use assignment 2, add some dummy text and apply following formatting on text using bootstrap.
+
+Row #
+Formatting
+Row 1
+Center aligned your name in heading 1 format.
+Row 2
+Primary text with italic.
+Row 3
+Danger text in center alignment.
+Row 4
+Muted small text.
+Row 5
+Right aligned strong warning text. 
+Row 6
+Strong success text.
+Row 7
+left aligned informative content.
+
+
+
+
