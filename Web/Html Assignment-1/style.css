@@ -23,10 +23,11 @@ div.input {
 }
 
 label.style1{
+margin-left:10%;
 	float: left;
-	width: 150px;
-	text-align: right;
-	margin-right: 2.2em;
+	width: 20%;
+	text-align: left;
+	
 	
 }
 

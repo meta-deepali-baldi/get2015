@@ -1,0 +1,41 @@
+Bootstrap Programming- Assignments
+Session 2
+Duration (8-10 hrs)
+
+Assignment 1: 
+Create a form which is responsive for all type devices.
+
+Assignment 2:
+Create responsive menu at the top of the page with following features:
+Add a Brand Name “Metacube”
+Add Home, About, Contact Us, Logout Menu, Movie Form, Movie Reviews.
+Add a dropdown named CSS with Button, Panel, Grid, Link, Pagination, progress bar items.
+A search text box having search icon at the right of menu.
+For large and medium screen devices all item with full name should be displayed. e.g. shown in below image
+
+For small size screen all menu item converted into icons. Search box would be displayed as it is. e.g. shown in below example. 
+
+For extra small devices menu get collapse, e.g. shown in below image (this image doesn’t have search text box, please keep search box on this menu)
+
+
+
+
+Assignment 3:
+Use Assignment 1 and 2 and apply below functionality.
+Hide all label for extra small size devices 
+Put placeholder.
+Display data on “Movie Reviews” menu click into table (You may use dummy data, that can get it from text file or buffer javascript array, see hint at last of assignment)
+Apply paging on data using Jquery (each page size should be 5)
+Apply searching functionality (in movie title) on these data from menu search textbox.
+
+
+
+
+
+Hint:
+How to generate table
+Add a table element in html
+
+Call ‘AddTable’ method for loading data into table (either on page load or on button click).
+
+
