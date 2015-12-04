@@ -1,0 +1,25 @@
+<html>
+<head>
+<script>
+function check() {
+	var noOfRecord=document.getElementById("noOfRecord").value;
+	alert(document.getElementById("newLink").href);
+	
+	document.getElementById("newLink").href = document.getElementById("newLink").href+noOfRecord;
+
+}
+</script>
+</head>
+<body>
+
+<select id="noOfRecord" onChange="check();" >
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+					<option>6</option>
+					</select>
+					
+					
+					<a id="newLink" href="asd.html">fdhgs</a>
+</body>
+					</html>
