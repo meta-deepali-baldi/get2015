@@ -1,9 +1,12 @@
 package com.metacube.exception;
 
+import org.apache.log4j.Logger;
 
 public class CustomGenericException extends RuntimeException {
 
 	private static final long serialVersionUID = 1L;
+	private final static Logger log = Logger
+			.getLogger(CustomGenericException.class);
 
 	private String errCode;
 	private String errMsg;
@@ -27,7 +30,7 @@ public class CustomGenericException extends RuntimeException {
 	public CustomGenericException(String errCode, String errMsg) {
 		this.errCode = errCode;
 		this.errMsg = errMsg;
-		
+		log.info(errCode + " Caused By " + errMsg);
 	}
 
 }

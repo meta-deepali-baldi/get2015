@@ -14,7 +14,6 @@ public class GlobalExceptionController {
 
 	@ExceptionHandler(CustomGenericException.class)
 	public ModelAndView handleCustomException(CustomGenericException ex) {
-		ApplicationLogger.log(ex.getErrMsg());
 		ModelAndView model = new ModelAndView("error/generic_error");
 		model.addObject("errCode", ex.getErrCode());
 		model.addObject("errMsg", ex.getErrMsg());
@@ -25,7 +24,6 @@ public class GlobalExceptionController {
 
 	@ExceptionHandler(Exception.class)
 	public ModelAndView handleAllException(Exception ex) {
-		ApplicationLogger.log(((CustomGenericException) ex).getErrMsg());
 		ModelAndView model = new ModelAndView("error/generic_error");
 		model.addObject("errMsg", "this is Exception.class");
 
