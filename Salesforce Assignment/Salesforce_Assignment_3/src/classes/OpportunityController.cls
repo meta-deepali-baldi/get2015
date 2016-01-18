@@ -2,10 +2,13 @@ public class OpportunityController {
 
     public static void populateInOpportunity(List<Opportunity> oppList) {
      
-        for(Opportunity opp:oppList){
-            if(opp.BillToContact__c != null && opp.Manager__c == null)
-            {
-                opp.Manager__c =opp.AccountId;
+        for(SObject opp:oppList){
+            if(opp instanceof Opportunity) {
+                Opportunity opportunity=(Opportunity)opp;
+                if(opportunity.BillToContact__c != null && opportunity.Manager__c == null)
+                {
+                    opportunity.Manager__c =opportunity.AccountId;
+                }
             }
             
         }
