@@ -3,6 +3,7 @@
     <types>
         <members>ClassController</members>
         <members>ContactsForAccount</members>
+        <members>MyStack</members>
         <members>ObjectList</members>
         <members>OpportunityController</members>
         <members>scheduledBatchable</members>
