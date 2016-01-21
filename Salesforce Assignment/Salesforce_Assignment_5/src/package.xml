@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>AccountFilterController</members>
+        <members>FilterInAccount</members>
+        <members>JSonController</members>
+        <members>ManageClassController</members>
+        <members>myControllerExtension</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>AccountWithFilterPage</members>
+        <members>DisplayRecordTypes</members>
+        <members>GeneratePdfOfStudentDetail</members>
+        <members>JsonDisplay</members>
+        <members>ManagerDetail</members>
+        <members>NewCase</members>
+        <members>NewStudent</members>
+        <members>assignment8</members>
+        <members>filter</members>
+        <name>ApexPage</name>
+    </types>
+    <version>35.0</version>
+</Package>
